@@ -1,0 +1,23 @@
+.main-nav {
+    ul {
+        list-style: none;
+        margin: 0;
+        background: linear-gradient(0,#335c91, #4c7fbd);
+        padding: 0 2rem;
+        li {
+            display: inline-block;
+            padding: 7px 1rem;
+            line-height: 42px;
+            &:not(:last-child){
+                border-left: 1px solid #7289a7;
+            }
+            a{
+                color: #ffffff;
+                text-decoration: unset;
+            }
+            &.active,&:hover{
+                background-color: rgb(65,110,160);
+            }
+        }
+    }
+}
