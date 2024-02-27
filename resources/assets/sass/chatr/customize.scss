@@ -1,0 +1,14 @@
+.select2-container--bootstrap5 .select2-selection__clear{
+    left: unset;
+    right: 3rem;
+}
+.image-input-placeholder {
+    background-image: url('../media/chatr/placeholder-image.jpg');
+}
+
+[data-bs-theme="dark"] .image-input-placeholder {
+    background-image: url('../media/chatr/placeholder-image.jpg');
+}
+.parent_permission td {
+    background-color: #eee;
+}

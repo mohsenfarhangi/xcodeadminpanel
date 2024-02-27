@@ -15,7 +15,12 @@ return new class extends Migration {
             $table->integer('user_id');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('mobile')->nullable();
+            $table->tinyInteger('country_code')->default('98')->nullable();
+            $table->enum('gender',['male','female'])->nullable();
+            $table->date('birth_date')->nullable();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 
