@@ -35,7 +35,7 @@ var KTScroll = function(element, options) {
         the.options = KTUtil.deepExtend({}, defaultOptions, options);
 
         // Elements
-        the.element = element;        
+        the.element = element;
         the.id = the.element.getAttribute('id');
 
         // Set initialized
@@ -112,7 +112,7 @@ var KTScroll = function(element, options) {
         } else {
             _resetHeight()
             _destroyScrollHandler();
-        }        
+        }
     }
 
     var _setupStretchHeight = function() {
@@ -155,7 +155,7 @@ var KTScroll = function(element, options) {
         var offset = _getOption('offset');
 
         // Spacings
-        height = height - _getElementSpacing(the.element); 
+        height = height - _getElementSpacing(the.element);
 
         // Height dependencies
         //console.log('Q:' + JSON.stringify(dependencies));
@@ -211,7 +211,7 @@ var KTScroll = function(element, options) {
             if (KTUtil.css(element, 'border-bottom')) {
                 height = height + parseInt(KTUtil.css(element, 'border-bottom'));
             }
-        } 
+        }
 
         return height;
     }
@@ -232,7 +232,7 @@ var KTScroll = function(element, options) {
             if (KTUtil.css(element, 'border-bottom')) {
                 spacing = spacing + parseInt(KTUtil.css(element, 'border-bottom'));
             }
-        } 
+        }
 
         return spacing;
     }
@@ -324,11 +324,11 @@ KTScroll.createInstances = function(selector = '[data-kt-scroll="true"]') {
 KTScroll.handleResize = function() {
     window.addEventListener('resize', function() {
         var timer;
-    
+
         KTUtil.throttle(timer, function() {
             // Locate and update Offcanvas instances on window resize
             var elements = document.body.querySelectorAll('[data-kt-scroll="true"]');
-    
+
             if ( elements && elements.length > 0 ) {
                 for (var i = 0, len = elements.length; i < len; i++) {
                     var scroll = KTScroll.getInstance(elements[i]);
@@ -349,9 +349,9 @@ KTScroll.init = function() {
         KTScroll.handleResize();
 
         KTScrollHandlersInitialized = true;
-    }    
+    }
 };
-
+export default KTScroll;
 // Webpack Support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTScroll;

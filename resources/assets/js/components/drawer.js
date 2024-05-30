@@ -1,6 +1,6 @@
 "use strict";
 
-var KTDrawerHandlersInitialized = false; 
+var KTDrawerHandlersInitialized = false;
 
 // Class definition
 var KTDrawer = function(element, options) {
@@ -149,13 +149,13 @@ var KTDrawer = function(element, options) {
             the.shown = true;
         } else {
             the.shown = false;
-        }       
+        }
 
         // Activate/deactivate
         if ( _getOption('activate') === true ) {
             KTUtil.addClass(the.element, the.options.baseClass);
             KTUtil.addClass(the.element, the.options.baseClass + '-' + direction);
-            
+
             KTUtil.css(the.element, 'width', width, true);
             the.lastWidth = width;
 
@@ -398,12 +398,12 @@ KTDrawer.handleShow = function() {
     // External drawer toggle handler
     KTUtil.on(document.body,  '[data-kt-drawer-show="true"][data-kt-drawer-target]', 'click', function(e) {
         e.preventDefault();
-        
+
         var element = document.querySelector(this.getAttribute('data-kt-drawer-target'));
 
         if (element) {
             KTDrawer.getInstance(element).show();
-        } 
+        }
     });
 }
 
@@ -418,7 +418,7 @@ KTDrawer.handleDismiss = function() {
             if (drawer.isShown()) {
                 drawer.hide();
             }
-        } 
+        }
     });
 }
 
@@ -457,6 +457,7 @@ KTDrawer.init = function() {
     }
 };
 
+export default KTDrawer;
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTDrawer;

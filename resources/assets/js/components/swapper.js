@@ -49,7 +49,7 @@ var KTSwapper = function(element, options) {
 
         var mode = _getOption('mode');
         var parentElement = parentSelector ? document.querySelector(parentSelector) : null;
-       
+
 
         if (parentElement && element.parentNode !== parentElement) {
             if (mode === 'prepend') {
@@ -147,17 +147,17 @@ KTSwapper.createInstances = function(selector = '[data-kt-swapper="true"]') {
 KTSwapper.handleResize = function() {
     window.addEventListener('resize', function() {
         var timer;
-    
+
         KTUtil.throttle(timer, function() {
             // Locate and update Offcanvas instances on window resize
             var elements = document.querySelectorAll('[data-kt-swapper="true"]');
-    
+
             if ( elements && elements.length > 0 ) {
                 for (var i = 0, len = elements.length; i < len; i++) {
                     var swapper = KTSwapper.getInstance(elements[i]);
                     if (swapper) {
                         swapper.update();
-                    }                
+                    }
                 }
             }
         }, 200);
@@ -173,7 +173,7 @@ KTSwapper.init = function() {
         KTSwapperHandlersInitialized = true;
     }
 };
-
+export default KTSwapper
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTSwapper;

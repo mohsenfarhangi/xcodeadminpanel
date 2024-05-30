@@ -1,7 +1,7 @@
 "use strict";
 
 // Class definition
-var KTApp = function () {
+export const KTApp = function () {
     var initialized = false;
     var select2FocusFixInitialized = false;
     var countUpInitialized = false;
@@ -670,11 +670,11 @@ var KTApp = function () {
 
         createBootstrapTooltip: function(el, options) {
             return createBootstrapTooltip(el, options);
+        },
+
+        test : function (){
+            return "asdasdasd"
         }
     };
 }();
 
-// Declare KTApp for Webpack support
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = KTApp;
-}

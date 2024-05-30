@@ -41,19 +41,19 @@ return [
         ],
         'body'            => 'auth-bg bgi-size-cover bgi-position-center bgi-no-repeat',
         'auth_background' => [
-            'light' => 'assets/media/auth/bg4.jpg',
-            'dark'  => 'assets/media/auth/bg4-dark.jpg'
+            'light' => 'resources/assets/media/auth/bg4.jpg',
+            'dark'  => 'resources/assets/media/auth/bg4-dark.jpg'
         ],
         'css'             => [
-            'assets/plugins/custom/prismjs/prismjs.bundle.rtl.css',
-            'assets/plugins/global/plugins.bundle.rtl.css',
+//            'assets/plugins/custom/prismjs/prismjs.bundle.rtl.css',
+//            'assets/plugins/global/plugins.bundle.rtl.css',
         ],
         'js'              => [
-            'assets/plugins/global/plugins.bundle.js',
-            'assets/js/scripts.bundle.js',
-            'assets/js/widgets.bundle.js',
-            'assets/js/custom/global.js',
-            'assets/js/custom/pages/cpanel/controls.js',
+            'resources/assets/js/app.js',
+            'resources/assets/js/components.js',
+//            'assets/js/widgets.bundle.js',
+//            'assets/js/custom/global.js',
+            'resources/assets/js/custom/pages/cpanel/controls.js',
         ],
     ],
 

@@ -1,15 +1,15 @@
 <?php
 return [
-    'dashboard'        => [
-        'title'            => 'cpanel.dashboard',
-        'description'      => '',
-        'view'             => 'index',
-        'layout'           => array(
+    'dashboard' => [
+        'title'       => 'cpanel.dashboard',
+        'description' => '',
+        'view'        => 'index',
+        'layout'      => array(
             'page-title' => array(
                 'breadcrumb' => false // hide breadcrumb
             ),
         ),
-        'admin'            => [
+        'admin'       => [
             'title'  => 'لیست کاربران',
             'view'   => 'index',
             'layout' => [
@@ -30,7 +30,7 @@ return [
                 ],
             ],
         ],
-        'roles'            => [
+        'roles'       => [
             'title'  => 'نقش کاربری',
             'view'   => 'index',
             'layout' => [
@@ -51,7 +51,7 @@ return [
                 ],
             ],
         ],
-        'permission'       => [
+        'permission'  => [
             'title'  => 'مجوز ها',
             'view'   => 'index',
             'layout' => [
@@ -72,7 +72,7 @@ return [
                 ],
             ],
         ],
-        'user'             => [
+        'user'        => [
             'title'   => 'لیست کاربران',
             'view'    => 'index',
             'layout'  => [
@@ -117,14 +117,19 @@ return [
             ]
         ]
     ],
-    'login'            => [
+    'login'     => [
         'meta'   => [
             'title' => 'ورود'
         ],
         'assets' => [
             'custom' => [
-                'js' => [
-                    'resources/assets/js/custom/authentication/general.js'
+                'css' => [
+                    'resources/assets/plugins/formvalidation/dist/css/formValidation.css'
+                ],
+                'js'  => [
+                    'resources/assets/plugins/formvalidation/dist/js/FormValidation.full.js',
+                    'resources/assets/plugins/formvalidation/dist/js/plugins/Bootstrap5.js',
+                    'resources/assets/js/custom/authentication/sign-in/general.js'
                 ]
             ],
         ],

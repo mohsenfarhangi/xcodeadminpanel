@@ -56,6 +56,9 @@ var KTCookie = function() {
     }
 }();
 
+export default {
+    'KTCookie' : KTCookie
+}
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTCookie;

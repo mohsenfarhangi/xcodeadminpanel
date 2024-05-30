@@ -33,9 +33,7 @@
 
     @if (theme()->hasOption('page', 'assets/custom/css'))
         {{-- begin::Page Custom Stylesheets(used by this page) --}}
-        @foreach (theme()->getOption('page', 'assets/custom/css') as $file)
-            <link href="{{ assetIfHasRTL($file) }}" rel="stylesheet" type="text/css"/>
-        @endforeach
+        @vite(theme()->getOption('page', 'assets/custom/css'))
         {{-- end::Page Custom Stylesheets --}}
     @endif
 
@@ -71,12 +69,11 @@
         return translation;
     }
 </script>
-@vite(['resources/assets/js/app.js'])
+
 @if (theme()->hasOption('assets', 'js'))
     {{-- begin::Global Javascript Bundle(used by all pages) --}}
-    @foreach (theme()->getOption('assets', 'js') as $file)
-        <script src="{{ asset($file) }}"></script>
-    @endforeach
+    @vite(theme()->getOption('assets', 'js'))
+
     {{-- end::Global Javascript Bundle --}}
 @endif
 

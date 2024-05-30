@@ -14,7 +14,7 @@ var KTPasswordMeter = function(element, options) {
     // Default Options
     var defaultOptions = {
         minLength: 8,
-        checkUppercase: true,        
+        checkUppercase: true,
         checkLowercase: true,
         checkDigit: true,
         checkChar: true,
@@ -45,11 +45,11 @@ var KTPasswordMeter = function(element, options) {
         the.element = element;
         the.inputElement = the.element.querySelector('input[type]');
         the.visibilityElement = the.element.querySelector('[data-kt-password-meter-control="visibility"]');
-        the.highlightElement = the.element.querySelector('[data-kt-password-meter-control="highlight"]'); 
+        the.highlightElement = the.element.querySelector('[data-kt-password-meter-control="highlight"]');
 
         // Set initialized
         the.element.setAttribute('data-kt-password-meter', 'true');
-        
+
         // Event Handlers
         _handlers();
 
@@ -70,13 +70,13 @@ var KTPasswordMeter = function(element, options) {
                 _visibility();
             });
         }
-    }   
+    }
 
     // Event handlers
     var _check = function() {
         var score = 0;
         var checkScore = _getCheckScore();
-        
+
         if (_checkLength() === true) {
             score = score + checkScore;
         }
@@ -120,11 +120,11 @@ var KTPasswordMeter = function(element, options) {
 
     var _checkChar = function() {
         return /[~`!#@$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(the.inputElement.value);  // 20 score
-    }    
+    }
 
     var _getCheckScore = function() {
         var count = 1;
-        
+
         if (the.options.checkUppercase === true) {
             count++;
         }
@@ -145,7 +145,7 @@ var KTPasswordMeter = function(element, options) {
 
         return 100 / the.checkSteps;
     }
-    
+
     var _highlight = function() {
         var items = [].slice.call(the.highlightElement.querySelectorAll('div'));
         var total = items.length;
@@ -160,19 +160,19 @@ var KTPasswordMeter = function(element, options) {
                 item.classList.add('active');
             } else {
                 item.classList.remove('active');
-            }            
+            }
         });
     }
 
     var _visibility = function() {
         var visibleIcon = the.visibilityElement.querySelector('i:not(.d-none), .svg-icon:not(.d-none)');
         var hiddenIcon = the.visibilityElement.querySelector('i.d-none, .svg-icon.d-none');
-        
+
         if (the.inputElement.getAttribute('type').toLowerCase() === 'password' ) {
             the.inputElement.setAttribute('type', 'text');
         }  else {
             the.inputElement.setAttribute('type', 'password');
-        }        
+        }
 
         visibleIcon.classList.add('d-none');
         hiddenIcon.classList.remove('d-none');
@@ -246,7 +246,7 @@ KTPasswordMeter.createInstances = function(selector = '[data-kt-password-meter]'
 KTPasswordMeter.init = function() {
     KTPasswordMeter.createInstances();
 };
-
+export default KTPasswordMeter
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTPasswordMeter;
