@@ -1,5 +1,6 @@
 <?php
 $menu = \App\Http\Core\Adapters\Bootstrap::getAsideMenu();
+
 ?>
 <!--begin::Nav-->
 <div class="aside-menu flex-column-fluid pt-0 pb-7 py-lg-10" id="kt_aside_menu">

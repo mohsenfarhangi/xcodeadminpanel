@@ -412,6 +412,7 @@
                         <!--end::Heading-->
                         <!--begin::Items-->
                         <div class="scroll-y mh-200px mh-lg-325px">
+                            @php /*
                             @foreach($cities as $city)
                                 <!--begin::Item-->
                                 <div class="d-flex align-items-center mb-5">
@@ -435,6 +436,8 @@
                                 </div>
                                 <!--end::Item-->
                             @endforeach
+                            */
+                            @endphp
                         </div>
                         <!--end::Items-->
                     </div>

@@ -101,8 +101,5 @@ Route::get('/js/lang.js', function () {
     exit();
 })->name('asset.lang');
 Route::get('/test', function () {
-//    $user = \App\Models\Admins::find(1);
-//    $user->update([
-//        'password' => Hash::make('demo')
-//    ]);
+
 });

@@ -341,4 +341,8 @@ class MainMenu extends \App\Http\Core\Theme\Menu
 
         return $this;
     }
+
+    protected function _canUser($role) {
+        return auth()->user()->can($role) || auth()->user()->superadmin;
+    }
 }

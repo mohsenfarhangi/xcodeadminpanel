@@ -3,7 +3,7 @@
 namespace App\View\Components;
 
 use App\Http\Core\Adapters\Theme;
-use App\Models\Cities;
+//use App\Models\Cities;
 use Illuminate\View\Component;
 
 class DefaultLayout extends Component
@@ -30,7 +30,7 @@ class DefaultLayout extends Component
         Theme::addHtmlAttribute('html', 'dir', 'rtl');
         Theme::addHtmlAttribute('html', 'style', 'direction:rtl');
         Theme::addHtmlClass('body', 'header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-disabled');
-        $cities = Cities::limit('5')->get();
+    //    $cities = Cities::limit('5')->get();
         return view(config('theme.general.KT_THEME_LAYOUT_DIR') . '._default', get_defined_vars());
     }
 }

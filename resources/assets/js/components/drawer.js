@@ -1,5 +1,6 @@
 "use strict";
 
+import KTEventHandler from "./event-handler.js";
 var KTDrawerHandlersInitialized = false;
 
 // Class definition
