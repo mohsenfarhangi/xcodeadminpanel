@@ -73,7 +73,7 @@ var KTToggle = function(element, options) {
             _disable();
         } else {
             _enable();
-        }       
+        }
 
         // Trigger "before.toggle" event
         KTEventHandler.trigger(the.element, 'kt.toggle.changed', the);
@@ -92,7 +92,7 @@ var KTToggle = function(element, options) {
 
         if (the.state.length > 0) {
             the.element.classList.add(the.state);
-        }        
+        }
 
         if ( typeof KTCookie !== 'undefined' && the.options.saveState === true ) {
             KTCookie.set(the.attribute, 'on');
@@ -114,7 +114,7 @@ var KTToggle = function(element, options) {
 
         if (the.state.length > 0) {
             the.element.classList.remove(the.state);
-        } 
+        }
 
         if ( typeof KTCookie !== 'undefined' && the.options.saveState === true ) {
             KTCookie.remove(the.attribute);
@@ -210,6 +210,7 @@ KTToggle.init = function() {
     KTToggle.createInstances();
 };
 
+export default KTToggle;
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTToggle;

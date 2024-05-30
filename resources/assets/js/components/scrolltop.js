@@ -158,6 +158,7 @@ KTScrolltop.init = function() {
     KTScrolltop.createInstances();
 };
 
+export default KTScrolltop;
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTScrolltop;

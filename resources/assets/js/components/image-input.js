@@ -208,7 +208,7 @@ KTImageInput.createInstances = function (selector = '[data-kt-image-input]') {
 KTImageInput.init = function () {
     KTImageInput.createInstances();
 };
-
+export default KTImageInput;
 // Webpack Support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTImageInput;

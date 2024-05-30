@@ -76,13 +76,13 @@ var KTSticky = function(element, options) {
 
         st = KTUtil.getScrollTop();
         diff = document.documentElement.scrollHeight - window.innerHeight - KTUtil.getScrollTop();
-        
+
         var proceed = (!release || (release.offsetTop - release.clientHeight) > st);
 
         if ( reverse === true ) {  // Release on reverse scroll mode
             if ( st > offset && proceed ) {
                 if ( document.body.hasAttribute(the.attributeName) === false) {
-                    
+
                     if (_enable() === false) {
                         return;
                     }
@@ -117,11 +117,11 @@ var KTSticky = function(element, options) {
         } else { // Classic scroll mode
             if ( st > offset && proceed ) {
                 if ( document.body.hasAttribute(the.attributeName) === false) {
-                    
+
                     if (_enable() === false) {
                         return;
-                    } 
-                    
+                    }
+
                     document.body.setAttribute(the.attributeName, 'on');
                     document.body.setAttribute(the.attributeName2, 'on');
                     the.element.setAttribute("data-kt-sticky-enabled", "true");
@@ -146,7 +146,7 @@ var KTSticky = function(element, options) {
                     the.eventTriggerState = true;
                 }
             }
-        }      
+        }
 
         if (release) {
             if ( release.offsetTop - release.clientHeight > st ) {
@@ -154,7 +154,7 @@ var KTSticky = function(element, options) {
             } else {
                 the.element.removeAttribute('data-kt-sticky-released');
             }
-        } 
+        }
     }
 
     var _enable = function(update) {
@@ -175,7 +175,7 @@ var KTSticky = function(element, options) {
         if (height + heightOffset + top > KTUtil.getViewPort().height) {
             return false;
         }
-        
+
         if ( update !== true && _getOption('animation') === true ) {
             KTUtil.css(the.element, 'animationDuration', _getOption('animationSpeed'));
             KTUtil.animateClass(the.element, 'animation ' + _getOption('animationClass'));
@@ -219,12 +219,12 @@ var KTSticky = function(element, options) {
 
         if ( right !== null ) {
             KTUtil.css(the.element, 'right', right);
-        }        
+        }
 
         // Height dependencies
         if ( dependencies !== null ) {
             var dependencyElements = document.querySelectorAll(dependencies);
-            
+
             if ( dependencyElements && dependencyElements.length > 0 ) {
                 for ( var i = 0, len = dependencyElements.length; i < len; i++ ) {
                     KTUtil.css(dependencyElements[i], 'padding-top', String(height) + 'px');
@@ -269,7 +269,7 @@ var KTSticky = function(element, options) {
 
         height = height + parseFloat(KTUtil.css(the.element, 'margin-top'));
         height = height + parseFloat(KTUtil.css(the.element, 'margin-bottom'));
-        
+
         if (KTUtil.css(element, 'border-top')) {
             height = height + parseFloat(KTUtil.css(the.element, 'border-top'));
         }
@@ -376,11 +376,11 @@ KTSticky.createInstances = function(selector = '[data-kt-sticky="true"]') {
 KTSticky.handleResize = function() {
     window.addEventListener('resize', function() {
         var timer;
-    
+
         KTUtil.throttle(timer, function() {
             // Locate and update Offcanvas instances on window resize
             var elements = document.body.querySelectorAll('[data-kt-sticky="true"]');
-    
+
             if ( elements && elements.length > 0 ) {
                 for (var i = 0, len = elements.length; i < len; i++) {
                     var sticky = KTSticky.getInstance(elements[i]);
@@ -400,9 +400,9 @@ KTSticky.init = function() {
     if (KTStickyHandlersInitialized === false) {
         KTSticky.handleResize();
         KTStickyHandlersInitialized = true;
-    }    
+    }
 };
-
+export default KTSticky
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTSticky;
